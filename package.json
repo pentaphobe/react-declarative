@@ -1,0 +1,37 @@
+{
+  "name": "react-declarative",
+  "version": "0.0.1",
+  "description": "Phase 1 generic environment for integration of design system components in 3rd party systems",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=dev webpack-dev-server --progress --inline",
+    "build": "npm run clean && npm run copy-static && NODE_ENV=production webpack --progress",
+    "copy-static": "cp -R src/static/* dist",
+    "clean": "rm -R dist/*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git@github.com:pentaphobe/react-declarative.git",
+  "author": "Keilin Olsen <keilin.olsen@heathwallace.com> (http://heathwallace.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "file-loader": "^0.11.2",
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "recompose": "^0.24.0",
+    "styled-components": "^2.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "html-webpack-plugin": "^2.28.0",
+    "path": "^0.12.7",
+    "react-hot-loader": "next",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
