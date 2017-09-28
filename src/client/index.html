@@ -17,9 +17,25 @@
 
   </head>
   <body>
-    <div data-ads-component="Button">
-
+    <div 
+      data-ads-component="Button">Normal
     </div>
+    <div 
+      data-ads-component="Button" large>Large
+    </div>
+    <div 
+      data-ads-component="Button" fullWidth>full-width <span style="color:#f0f">button</span>
+    </div>
+    <div 
+      data-ads-component="Button" action>action
+    </div>    
+    <div 
+      data-ads-component="Button" disabled>Disabled
+    </div>
+    <div 
+      data-ads-component="Button" ghost>Ghost
+    </div>
+
     <script src="lib/ads-declarative.js"></script>      
     <script>
       /**
@@ -28,10 +44,10 @@
        */
       window.onload = function() {
         // NB: webpack seems to be getting confused with template string here
-        let els = document.querySelectorAll('[' + ADS_COMPONENT + ']');
+        let els = document.querySelectorAll('[' + ads.ATTR_COMPONENT + ']');
 
         if (els) {
-          let success = Array.prototype.every.call(els, parse);
+          let success = Array.prototype.every.call(els, ads.parse);
 
           if (!success) {
             console.log('failed');

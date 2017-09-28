@@ -10,5 +10,5 @@ import Button from 'components/Button';
  * Export our bundled React (et al)
  *
  */
-exportBundled({React, ReactDom});
-registerComponent('Button', Button);
+ads.exportBundled({React, ReactDom});
+ads.registerComponent('Button', Button);
