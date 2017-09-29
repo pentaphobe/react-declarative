@@ -38,6 +38,12 @@
     componentRegistry[name] = Component;
   }
 
+  function registerComponents(componentDictionary) {
+    // basically just `Object.assign(componentRegistry, componentDictionary);`
+    // but doing it the long way so `registerComponent` is the single source
+    Object.keys(componentDictionary).forEach( key => registerComponent(key, componentDictionary[key]) );
+  }
+
   function convertChild(child) {
     if (child instanceof Text) {
       return child.nodeValue;
@@ -145,6 +151,7 @@
       ATTR_PREFIX, ATTR_COMPONENT,
 
       registerComponent,
+      registerComponents,
       parse,
       exportBundled,
     }

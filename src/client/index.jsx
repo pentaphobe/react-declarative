@@ -11,4 +11,6 @@ import Button from 'components/Button';
  *
  */
 ads.exportBundled({React, ReactDom});
-ads.registerComponent('Button', Button);
+ads.registerComponents({
+  Button,  
+});
